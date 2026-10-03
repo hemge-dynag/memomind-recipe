@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="theme-color" content="#0b0e14">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>GM Recipe</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 id="app-title">Recette pas-à-pas</h1>
+      <span id="status" class="status">Démarrage…</span>
+    </header>
+
+    <main>
+      <section class="picker">
+        <label id="pick-label" for="recipe-select">Choisir une recette</label>
+        <select id="recipe-select"></select>
+      </section>
+
+      <section class="review-cta">
+        <button id="start-button" disabled>Envoyer aux lunettes</button>
+        <button id="stop-button" class="ghost" hidden>Arrêter</button>
+      </section>
+
+      <p id="glasses-hint" class="hint">Sur les lunettes : tête haut/bas = changer d’étape, bouton = minuteur.</p>
+
+      <section id="session-panel" hidden>
+        <p id="step-status" class="progress"></p>
+      </section>
+
+      <ol id="steps-list" class="steps"></ol>
+
+      <section class="stats-grid">
+        <div class="stat"><span class="stat-value" id="stat-recipes">0</span><span class="stat-label" id="stat-recipes-label">Recettes envoyées</span></div>
+      </section>
+      <p id="no-stats" class="hint">Aucune recette envoyée pour l’instant.</p>
+    </main>
+
+    <script type="module" src="plugin.js"></script>
+  </body>
+</html>
